@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Remove{% endblock %}	
+{% block body %}
+	<form class="sign-in" method="post" action="">
+	<div class=container>
+		<div class=jumbotron>
+			<!-- <select> -->
+				<!-- {% for item in items %} -->
+					<!-- <option>{{ item }}</option> -->
+				<!-- {% endfor %} -->
+			<!-- </select> -->
+			<input type="text" name="removes" placeholder="Remove item">
+			<button type='submit' class='btn btn-primary'>Remove Item</button>
+			<br><br><a class="btn btn-primary" type="submit" href="{{ url_for('main.index') }}">Return Home</a>
+		</div>
+	<form>
+	</div>
+{% endblock %}	

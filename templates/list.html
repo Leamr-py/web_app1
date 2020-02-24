@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Grocery List{% endblock %}
+
+{% block body %}
+<div class="container">	
+	
+	<ul class="jumbotron">
+		{% for item in items %}
+			<li>{{ item }}</li>
+		{% endfor %}
+	</ul>
+	<a class="btn btn-primary" type="submit" href="{{ url_for('main.index') }}">Return Home</a>
+
+</div>
+{% endblock %}

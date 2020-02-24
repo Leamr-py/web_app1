@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="eng">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="C-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<title>{% block title %}{% endblock %}</title>
+		
+		<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+		
+		{% block css %}{% endblock %}
+	    
+	    <link href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" rel="stylesheet">
+        
+        <link href="{{ url_for('static', filename='css/theme.css') }}" rel="stylesheet">
+
+	</head>
+	
+	<body>
+		{% block body %}{% endblock %}
+	</body>
+
+
+
+</html>
