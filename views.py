@@ -1,14 +1,19 @@
 from flask import Blueprint, render_template, request, redirect, url_for
+import json
 
 main = Blueprint('main', __name__)
+#try loading items here and see if it still cant find it. 
 
-items = []
 @main.route('/')
 def index():
+	with open('list.json') as file:
+		items = json.load(file)
 	return render_template('homepage.html', items=items)
 
 @main.route('/list')
 def list():
+	with open('list.json') as file:
+		items = json.load(file)
 	return render_template('list.html', items=items)
 
 @main.route('/remove', methods=['POST'])
@@ -31,6 +36,7 @@ def drop_down():
 	if list_remove:
 		items.remove(f'{list_remove}')
 	return render_template('homepage.html', items=items)
+
 
 
 
