@@ -18,17 +18,6 @@ def list():
 		items = json.load(file)
 	return render_template('list.html', items=items)
 
-@main.route('/remove', methods=['POST'])
-def list_remove():
-	with open('list.json') as file:
-		items = json.load(file)
-	list_remove = request.form.get('removes')
-	if list_remove:
-		items.remove(f'{list_remove}')
-	with open('list.json', 'w') as file:
-		json.dump(items, file)
-	return render_template('homepage.html', items=items)
-
 @main.route('/list_post', methods=['POST'])
 def list_post():
 	with open('list.json') as file:

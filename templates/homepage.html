@@ -12,37 +12,19 @@
 				<input type="text" name="items" placeholder="New item">
 				<button class="btn btn-primary" type="submit">Add Item</button>
 				<br><a type="submit" class="btn btn-primary" href="{{ url_for('main.list') }}">check list</a>
-			</div>
-
-			
-
-		</form>
-
-		<form class="form-signin" method="post" action="/remove" >
-			<div class="container">
-
-				<!-- <select> -->
-					<!-- {% for item in items %} -->
-						<!-- <option>{{ item }}</option> -->
-					<!-- {% endfor %} -->
-				<!-- </select> -->
-				<input type="text" name="removes" placeholder="Remove item">
-				<button type='submit' class='btn btn-primary'>Remove Item</button>
-				<!-- <br><br><a class="btn btn-primary" type="submit" href="{{ url_for('main.index') }}">Return Home</a> -->
-		
-			</div>
+			</div>	
 		</form>
 
 		<!-- creating a new form to propogate a drop-down -->
 		<form class="" method="post" action="/drop_down_remove">
 			<div class="container">
-				<h5>Drop Down List</h5>
+				<h2>Current List</h2>
 				<select name="drop_down">
 					{% for item in items %}
 					<option>{{ item }}</option>
 					{% endfor %}
 				</select>
-				<button type="submit" class="btn btn-primary">Remove via drop-down</button>
+				<button type="submit" class="btn btn-primary">Remove</button>
 				
 
 			</div>
