@@ -6,30 +6,52 @@
 {% block body %}
 	<div class="container">
 		<h2>Grocery List</h2>
-		<form class="form-signin" method="POST" action="/list_post">
-			<div class="container">
-				<label for="inputItem" class="sr-only">Add an item</label>
-				<input type="text" name="items" placeholder="New item">
-				<button class="btn btn-primary" type="submit">Add Item</button>
-				<br><a type="submit" class="btn btn-primary" href="{{ url_for('main.list') }}">check list</a>
-			</div>	
+		<form class='' method="POST" action="/create_list">
+			<div>
+				<input type="text" name="new_list" placeholder="Name">
+				<button class="btn btn-primary" type="submit">Create List</button>
+			</div>
 		</form>
-
-		<!-- creating a new form to propogate a drop-down -->
-		<form class="" method="post" action="/drop_down_remove">
-			<div class="container">
-				<h2>Current List</h2>
-				<select name="drop_down">
-					{% for item in items %}
-					<option>{{ item }}</option>
+		<br>
+		<form class="" method="POST" action="/delete_list">
+			<div>
+				<label for="SelectList">Select a list</label>
+				<select name="current_lists">
+					{% for list in lists %}
+					<option>
+						{{ list }}
+					</option>
 					{% endfor %}
 				</select>
-				<button type="submit" class="btn btn-primary">Remove</button>
+				
+				<button class="btn btn-primary" type="submit">Delete List</button>
+					
+			</div>
+		</form>
+		<br>
+		
+		<form class="" method="POST" action="/list">
+			<div>
+				<label for="ChoosingList">Choose a List</label>
+				<select name="chooselist">
+					{% for list in lists %}
+					<option>
+						{{list}}
+					</option>
+					{% endfor %}
+				</select>
+				<button class="btn btn-primary"type='submit'>Go to List</button>
+					
 				
 
 			</div>
 
+			
+
 		</form>
+
+		
+
 
 
 	</div>
