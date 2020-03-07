@@ -5,15 +5,9 @@
 {% block body %}
 <div class="container">	
 
-	<form class="" method="POST" action="/list_post">
+	<form class="" method="POST" action="/list_post/{{ name }}">
 		<div>
-			
-			<h2>{{name}}</h2>
-			<select name=names style="display: none;">
-				<option>
-					{{name}}
-				</option>
-			</select>
+			<h2>{{ name }}</h2>
 		</div>
 		<div class="">
 			<label for="inputItem" class="sr-only">Add an item</label>
@@ -23,14 +17,7 @@
 		</div>
 		<br>
 	</form>
-		<form class="" method="POST" action="/drop_down_remove">
-		<div>
-			<select name=names style="display: none;">
-				<option>
-					{{name}}
-				</option>
-			</select>
-		</div>
+		<form class="" method="POST" action="/drop_down_remove/{{ name }}">
 			<div class="container">
 				<select name="drop_down">
 					{% for item in items %}

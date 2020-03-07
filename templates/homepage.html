@@ -34,9 +34,9 @@
 			<div>
 				<label for="ChoosingList">Choose a List</label>
 				<select name="chooselist">
-					{% for list in lists %}
+					{% for name in lists %}
 					<option>
-						{{list}}
+						{{ name }}
 					</option>
 					{% endfor %}
 				</select>
