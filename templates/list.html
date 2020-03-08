@@ -1,10 +1,35 @@
 {% extends 'base.html' %}
 
-{% block title %}Grocery List{% endblock %}
+{% block title %}List{% endblock %}
 
 {% block body %}
 <div class="container">	
-	
+
+	<form class="" method="POST" action="/list_post/{{ name }}">
+		<div>
+			<h2>{{ name }}</h2>
+		</div>
+		<div class="">
+			<label for="inputItem" class="sr-only">Add an item</label>
+			<input type="text" name="items" placeholder="New item">
+			<button class="btn btn-primary" type="submit">Add Item</button>
+			
+		</div>
+		<br>
+	</form>
+		<form class="" method="POST" action="/drop_down_remove/{{ name }}">
+			<div class="container">
+				<select name="drop_down">
+					{% for item in items %}
+					<option>{{ item }}</option>
+					{% endfor %}
+				</select>
+				<button type="submit" class="btn btn-primary">Remove</button>
+
+			</div>
+
+		</form>
+		<br>
 	<ul class="jumbotron">
 		{% for item in items %}
 			<li>{{ item }}</li>
